@@ -8,18 +8,21 @@ public class Main {
         String input;
         do {
 
-            System.out.println("Enter an integer: "); //prompt
+            System.out.println("Enter an number: "); //prompt
             Scanner scan = new Scanner(System.in); //Init scan
-            int topNum = scan.nextInt();
+            long topNum = scan.nextLong();
             scan.nextLine();
-            int i;
+            long i;
+            int colL = 22;
 
             for (i = 0; i <= topNum; i++) {
                 if (i == 0) {
-                    System.out.println("Number  Squared Cubed");
-                    System.out.println("======  ======= ======");
+                    System.out.printf("%" + colL + "s%" + colL + "s%" + colL + "s\n","Number","Squared","Cubed");
+                    System.out.printf("%" + colL + "s%" + colL + "s%" + colL + "s\n","======","=======","=====");
                 } else {
-                    System.out.printf("%d      %d      %d\n", i, (i * i), (i * i * i));
+                    long sqr = i * i;
+                    long cube = i * i * i;
+                    System.out.printf("%" + colL + "d%" + colL + "d%" + colL + "d\n", i, sqr, cube);
                 }
             }
             System.out.println("Continue? (y/n): ");
